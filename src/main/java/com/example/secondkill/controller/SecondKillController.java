@@ -32,7 +32,7 @@ public class SecondKillController {
         GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
         if(goods.getStockCount()<1){
             model.addAttribute("errmsg", RespBeanEnum.EMPTY_STOCK.getMessage());
-            return "secondKillFail";
+            return "secondKillFail_master";
         }
         SecondkillOrder secondkillOrder = secondkillOrderService.getOne(new QueryWrapper<SecondkillOrder>().eq("user_id", user.getId()).eq("goods_id", goodsId));
         if(secondkillOrder!=null){
