@@ -26,7 +26,7 @@ public class SecondKillController {
     @RequestMapping("/doSecondKill")
     public String doSecondKill(Model model, User user, Long goodsId){
         if(user==null){
-            return "login";
+            return "after_login";
         }
         model.addAttribute("user",user);
         GoodsVo goods = goodsService.findGoodsVoByGoodsId(goodsId);
